@@ -1,0 +1,8 @@
+{
+  "manifest_version": 3,
+  "name": "Phone Home Lite",
+  "version": "0.4.0",
+  "description": "A new tab page with phone-shaped tiles that open your social apps in phone-sized windows.",
+  "chrome_url_overrides": { "newtab": "newtab.html" },
+  "permissions": ["storage"]
+}

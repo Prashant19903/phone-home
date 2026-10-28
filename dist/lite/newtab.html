@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>New Tab</title>
+  <link rel="stylesheet" href="newtab.css" />
+</head>
+<body>
+  <div class="bg" aria-hidden="true">
+    <span class="blob b1"></span>
+    <span class="blob b2"></span>
+    <span class="blob b3"></span>
+    <span class="blob b4"></span>
+  </div>
+
+  <header class="top">
+    <div class="hero">
+      <div id="clock">--:--</div>
+      <div id="greeting"></div>
+    </div>
+    <div class="controls glass">
+      <label>Size
+        <input id="scale" type="range" min="40" max="100" value="70" />
+        <span id="scaleVal">70%</span>
+      </label>
+      <label class="check"><input id="autoFit" type="checkbox" /> Auto</label>
+      <button id="addBtn">+ Add app</button>
+      <button id="fixLogin" class="full-only" title="Re-set site cookies as SameSite=None so logins work inside frames">Fix login</button>
+      <label class="check"><input id="mascotToggle" type="checkbox" /> Mascot</label>
+      <span id="status"></span>
+    </div>
+  </header>
+
+  <main id="grid" class="grid"></main>
+
+  <dialog id="addDlg" class="glass-dlg">
+    <h2>Add an app</h2>
+    <div id="presetList" class="chips"></div>
+    <hr />
+    <form id="customForm" autocomplete="off">
+      <h3>Or add any website</h3>
+      <div class="row">
+        <input id="cName" type="text" placeholder="Name (e.g. Notion)" maxlength="24" />
+        <input id="cColor" type="color" value="#8b5cf6" title="Accent colour" />
+      </div>
+      <input id="cUrl" type="url" placeholder="https://example.com" required />
+      <label class="check"><input id="cMobile" type="checkbox" checked /> Mobile view</label>
+      <div id="formErr" class="err"></div>
+      <div class="row end">
+        <button type="button" id="cancelBtn">Cancel</button>
+        <button type="submit" class="primary">Add</button>
+      </div>
+    </form>
+  </dialog>
+
+  <div id="mascotWrap" class="mascot-wrap">
+    <div id="bubble" class="bubble"></div>
+    <svg id="mascot" viewBox="0 0 120 140" role="img" aria-label="Builder Bot mascot">
+      <ellipse cx="60" cy="134" rx="30" ry="5" fill="rgba(0,0,0,.35)" />
+      <g id="bot">
+        <rect id="armL" x="22" y="92" width="14" height="28" rx="7" fill="#b9c4da" />
+        <rect id="armR" x="84" y="92" width="14" height="28" rx="7" fill="#b9c4da" />
+        <rect x="38" y="86" width="44" height="40" rx="14" fill="#cfd8ea" />
+        <rect class="chest" x="50" y="98" width="20" height="10" rx="5" />
+        <rect x="26" y="40" width="68" height="52" rx="22" fill="#e6ecf7" />
+        <rect x="34" y="52" width="52" height="30" rx="14" fill="#10162a" />
+        <g class="eye"><circle cx="50" cy="66" r="7" fill="#fff" /><circle id="pupilL" cx="50" cy="66" r="3.5" fill="#10162a" /></g>
+        <g class="eye"><circle cx="70" cy="66" r="7" fill="#fff" /><circle id="pupilR" cx="70" cy="66" r="3.5" fill="#10162a" /></g>
+        <path d="M54 76 Q60 80 66 76" fill="none" stroke="#7dd3fc" stroke-width="2" stroke-linecap="round" />
+        <path d="M28 46 Q60 4 92 46 Z" fill="#ffc933" />
+        <rect x="22" y="44" width="76" height="9" rx="4.5" fill="#f5b400" />
+        <circle cx="60" cy="24" r="4" fill="#fff8d6" />
+      </g>
+    </svg>
+  </div>
+
+  <script src="sites.js"></script>
+  <script src="newtab.js"></script>
+</body>
+</html>

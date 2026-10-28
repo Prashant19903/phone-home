@@ -1,0 +1,16 @@
+{
+  "manifest_version": 3,
+  "name": "Phone Home",
+  "version": "0.4.0",
+  "description": "Replace the new tab page with live phone-shaped frames for your social apps.",
+  "chrome_url_overrides": { "newtab": "newtab.html" },
+  "permissions": ["storage", "declarativeNetRequest", "cookies"],
+  "host_permissions": [
+    "https://*.instagram.com/*",
+    "https://*.facebook.com/*",
+    "https://*.reddit.com/*",
+    "https://*.whatsapp.com/*"
+  ],
+  "optional_host_permissions": ["https://*/*"],
+  "background": { "service_worker": "background.js" }
+}
